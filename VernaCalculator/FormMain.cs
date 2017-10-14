@@ -11,6 +11,7 @@ namespace VernaCalculator
 {
     public partial class FormMain : Form
     {
+
         public char operation = ' ';    //Holder for current user operation
         private double answer = 0.00;    //Holder for current answer
         private double gen = 0.00;       //Holder for 2nd double
@@ -269,8 +270,7 @@ namespace VernaCalculator
         /*=================================================================================================
         *                                    BUTTON ACITONS END
         =================================================================================================*/
-
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /*=================================================================================================
         *                                    MENU ACITONS START
         =================================================================================================*/
@@ -279,9 +279,13 @@ namespace VernaCalculator
         private void menuProgrammer_Click(object sender, EventArgs e)
         {
             FormProgramming f = new FormProgramming();
-            f.StartPosition = this.StartPosition;
-            f.Show();
+            
+
             this.Hide();
+            
+            f.ShowDialog();
+
+            this.Close();
         }
 
         /*=================================================================================================

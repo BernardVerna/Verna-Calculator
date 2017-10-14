@@ -50,8 +50,8 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStandard = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProgrammer = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -292,12 +292,7 @@
             this.menuStandard.Name = "menuStandard";
             this.menuStandard.Size = new System.Drawing.Size(152, 22);
             this.menuStandard.Text = "Standard";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.menuStandard.Click += new System.EventHandler(this.menuStandard_Click);
             // 
             // menuProgrammer
             // 
@@ -306,6 +301,12 @@
             this.menuProgrammer.Name = "menuProgrammer";
             this.menuProgrammer.Size = new System.Drawing.Size(152, 22);
             this.menuProgrammer.Text = "Programming";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
             // FormProgramming
             // 

@@ -271,6 +271,19 @@ namespace VernaCalculator
 
         }
 
+        private void menuStandard_Click(object sender, EventArgs e)
+        {
+            FormMain f = new FormMain();
+
+            f.Location = this.Location;
+
+            this.Hide();
+
+            f.ShowDialog();
+
+            this.Close();
+        }
+
         /*=================================================================================================
         *                                    BUTTON ACITONS END
         =================================================================================================*/
