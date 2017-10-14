@@ -1,6 +1,6 @@
 ﻿namespace VernaCalculator
 {
-    partial class FormMain
+    partial class FormProgramming
     {
         /// <summary>
         /// Required designer variable.
@@ -50,8 +50,8 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStandard = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuProgrammer = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuProgrammer = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -285,21 +285,13 @@
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
             this.windowToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.windowToolStripMenuItem.Text = "Window";
+            this.windowToolStripMenuItem.Click += new System.EventHandler(this.windowToolStripMenuItem_Click);
             // 
             // menuStandard
             // 
-            this.menuStandard.Checked = true;
-            this.menuStandard.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuStandard.Name = "menuStandard";
             this.menuStandard.Size = new System.Drawing.Size(152, 22);
             this.menuStandard.Text = "Standard";
-            // 
-            // menuProgrammer
-            // 
-            this.menuProgrammer.Name = "menuProgrammer";
-            this.menuProgrammer.Size = new System.Drawing.Size(152, 22);
-            this.menuProgrammer.Text = "Programming";
-            this.menuProgrammer.Click += new System.EventHandler(this.menuProgrammer_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -307,7 +299,15 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // FormMain
+            // menuProgrammer
+            // 
+            this.menuProgrammer.Checked = true;
+            this.menuProgrammer.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.menuProgrammer.Name = "menuProgrammer";
+            this.menuProgrammer.Size = new System.Drawing.Size(152, 22);
+            this.menuProgrammer.Text = "Programming";
+            // 
+            // FormProgramming
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -336,10 +336,10 @@
             this.MainMenuStrip = this.menuStrip;
             this.MaximumSize = new System.Drawing.Size(260, 360);
             this.MinimumSize = new System.Drawing.Size(260, 360);
-            this.Name = "FormMain";
+            this.Name = "FormProgramming";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Verna Calculator";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.FormProgramming_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -370,9 +370,8 @@
         private System.Windows.Forms.Button buttonEnter;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuProgrammer;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuStandard;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuProgrammer;
     }
 }
-

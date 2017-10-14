@@ -9,15 +9,14 @@ using System.Windows.Forms;
 
 namespace VernaCalculator
 {
-    public partial class FormMain : Form
+    public partial class FormProgramming : Form
     {
+
         public char operation = ' ';    //Holder for current user operation
         private double answer = 0.00;    //Holder for current answer
         private double gen = 0.00;       //Holder for 2nd double
         private string temp = "";       //Used for ra
         private int counter = 0;
-
-
 
         //Convert text string to double
         public void setAnswer()
@@ -58,87 +57,88 @@ namespace VernaCalculator
             }
             else
             {
-                this.textDisplay.Text += x; 
-            }  
+                this.textDisplay.Text += x;
+            }
         }
 
 
-        
-
-
-/*=================================================================================================
- *                                    BUTTON ACITONS START
- ================================================================================================*/
-        public FormMain()
+        public FormProgramming()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormProgramming_Load(object sender, EventArgs e)
         {
+
         }
 
-    //When button 0 is clicked 
+
+        /*=================================================================================================
+         *                                    BUTTON ACITONS START
+         ================================================================================================*/
+        
+            
+        //When button 0 is clicked 
         private void button0_Click(object sender, EventArgs e)
         {
             if (counter == 0)
                 this.addButtonValue(this.button0.Text);
         }
-    //When button 1 is clicked
+        //When button 1 is clicked
         private void button1_Click(object sender, EventArgs e)
         {
             if (counter == 0)
                 this.addButtonValue(this.button1.Text);
         }
-    //When button 2 is clicked
+        //When button 2 is clicked
         private void button2_Click(object sender, EventArgs e)
         {
             if (counter == 0)
                 this.addButtonValue(this.button2.Text);
         }
-    //When button 3 is clicked
+        //When button 3 is clicked
         private void button3_Click(object sender, EventArgs e)
         {
             if (counter == 0)
                 this.addButtonValue(this.button3.Text);
         }
-    //When button 4 is clicked
+        //When button 4 is clicked
         private void button4_Click(object sender, EventArgs e)
         {
             if (counter == 0)
                 this.addButtonValue(this.button4.Text);
         }
-    //When button 5 is clicked
+        //When button 5 is clicked
         private void button5_Click(object sender, EventArgs e)
         {
             if (counter == 0)
                 this.addButtonValue(this.button5.Text);
         }
-    //When button 6 is clicked
+        //When button 6 is clicked
         private void button6_Click(object sender, EventArgs e)
         {
             if (counter == 0)
                 this.addButtonValue(this.button6.Text);
         }
-    //When button 7 is clicked
+        //When button 7 is clicked
         private void button7_Click(object sender, EventArgs e)
         {
             if (counter == 0)
                 this.addButtonValue(this.button7.Text);
         }
-    //When button 8 is clicked
+        //When button 8 is clicked
         private void button8_Click(object sender, EventArgs e)
         {
             if (counter == 0)
                 this.addButtonValue(this.button8.Text);
         }
-    //When button 9 is clicked
+        //When button 9 is clicked
         private void button9_Click(object sender, EventArgs e)
         {
-            if(counter==0)
+            if (counter == 0)
                 this.addButtonValue(this.button9.Text);
         }
-    //When button + is clicked
+        //When button + is clicked
         private void buttonPlus_Click(object sender, EventArgs e)
         {
             this.operation = '+';
@@ -148,9 +148,9 @@ namespace VernaCalculator
             this.textDisplay.Text = "+";
 
             this.counter = 0;
-            
+
         }
-    //When button - is clicked
+        //When button - is clicked
         private void buttonMinus_Click(object sender, EventArgs e)
         {
             this.operation = '-';
@@ -161,7 +161,7 @@ namespace VernaCalculator
 
             this.counter = 0;
         }
-    //When button * is clicked
+        //When button * is clicked
         private void buttonMultiply_Click(object sender, EventArgs e)
         {
             this.operation = '*';
@@ -172,7 +172,7 @@ namespace VernaCalculator
 
             this.counter = 0;
         }
-    //When button / is clicked
+        //When button / is clicked
         private void buttonDivide_Click(object sender, EventArgs e)
         {
             this.operation = '/';
@@ -183,7 +183,7 @@ namespace VernaCalculator
 
             this.counter = 0;
         }
-    //When button ^ is clicked
+        //When button ^ is clicked
         private void buttonPowerOf_Click(object sender, EventArgs e)
         {
             this.operation = '^';
@@ -194,7 +194,7 @@ namespace VernaCalculator
 
             this.counter = 0;
         }
-    //When button sqrt is clicked
+        //When button sqrt is clicked
         private void buttonSquareRoot_Click(object sender, EventArgs e)
         {
             this.operation = 's';
@@ -205,7 +205,7 @@ namespace VernaCalculator
 
             this.counter = 0;
         }
-    //When button sqrt is clicked;
+        //When button sqrt is clicked;
         private void buttonClear_Click(object sender, EventArgs e)
         {
             this.operation = ' ';
@@ -216,7 +216,7 @@ namespace VernaCalculator
             this.counter = 0;
         }
 
-    //When the user is ready to recieve their current answer
+        //When the user is ready to recieve their current answer
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             if (this.textDisplay.Text != "*" && this.textDisplay.Text != "/" && this.textDisplay.Text != "+"
@@ -233,7 +233,7 @@ namespace VernaCalculator
                 {
                     gen = Convert.ToDouble(temp);
                 }
-                
+
 
                 switch (operation)
                 {
@@ -253,11 +253,11 @@ namespace VernaCalculator
                         answer = Math.Pow(answer, gen);
                         break;
                     case 's':
-                        answer = Math.Pow(answer, (1/gen));
+                        answer = Math.Pow(answer, (1 / gen));
                         break;
                 }
                 this.textDisplay.Text = Convert.ToString(this.answer);
-                
+
             }
         }
 
@@ -266,26 +266,13 @@ namespace VernaCalculator
 
         }
 
-        /*=================================================================================================
-        *                                    BUTTON ACITONS END
-        =================================================================================================*/
-
-
-        /*=================================================================================================
-        *                                    MENU ACITONS START
-        =================================================================================================*/
-
-
-        private void menuProgrammer_Click(object sender, EventArgs e)
+        private void windowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormProgramming f = new FormProgramming();
-            f.StartPosition = this.StartPosition;
-            f.Show();
-            this.Hide();
+
         }
 
         /*=================================================================================================
-        *                                    MENU ACITONS END
+        *                                    BUTTON ACITONS END
         =================================================================================================*/
     }
 }
