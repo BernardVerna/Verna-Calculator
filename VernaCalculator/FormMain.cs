@@ -222,7 +222,7 @@ namespace VernaCalculator
         {
             if (this.textDisplay.Text != "*" && this.textDisplay.Text != "/" && this.textDisplay.Text != "+"
                 && this.textDisplay.Text != "-" && this.textDisplay.Text != "^"
-                && this.textDisplay.Text != "sqrt")
+                && this.textDisplay.Text != "sqrt" && operation != ' ')
             {
                 if (counter == 0)
                 {

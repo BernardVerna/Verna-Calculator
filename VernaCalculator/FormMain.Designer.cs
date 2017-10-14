@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.buttonSquareRoot = new System.Windows.Forms.Button();
             this.textDisplay = new System.Windows.Forms.Label();
             this.buttonPowerOf = new System.Windows.Forms.Button();
@@ -291,13 +292,13 @@
             this.menuStandard.Checked = true;
             this.menuStandard.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuStandard.Name = "menuStandard";
-            this.menuStandard.Size = new System.Drawing.Size(152, 22);
+            this.menuStandard.Size = new System.Drawing.Size(148, 22);
             this.menuStandard.Text = "Standard";
             // 
             // menuProgrammer
             // 
             this.menuProgrammer.Name = "menuProgrammer";
-            this.menuProgrammer.Size = new System.Drawing.Size(152, 22);
+            this.menuProgrammer.Size = new System.Drawing.Size(148, 22);
             this.menuProgrammer.Text = "Programming";
             this.menuProgrammer.Click += new System.EventHandler(this.menuProgrammer_Click);
             // 
@@ -333,6 +334,7 @@
             this.Controls.Add(this.textDisplay);
             this.Controls.Add(this.buttonSquareRoot);
             this.Controls.Add(this.menuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.MaximumSize = new System.Drawing.Size(260, 360);
             this.MinimumSize = new System.Drawing.Size(260, 360);
