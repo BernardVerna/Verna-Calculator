@@ -11,6 +11,44 @@ namespace VernaCalculator
 {
     public partial class FormMain : Form
     {
+        public char operation = ' ';    //Holder for current user operation
+        public double answer = 0.00;    //Holder for current answer
+        public double gen = 0.00;       //Holder for 2nd double
+
+
+
+    //This function indexes the selected number to the back of the entire string number
+        public void addButtonValue(string x)
+        {
+            if (this.textDisplay.Text == "0" || this.textDisplay.Text == "*" || this.textDisplay.Text == "/"
+                || this.textDisplay.Text == "+" || this.textDisplay.Text == "-" || this.textDisplay.Text == "^"
+                || this.textDisplay.Text == "sqrt")
+            {
+                this.textDisplay.Text = x;
+            }
+            else
+            {
+                this.textDisplay.Text += x; 
+            }  
+        }
+
+    //Convert text string to double
+        public void S2D(double foo)
+        {
+            if (this.textDisplay.Text != "*" && this.textDisplay.Text != "/" && this.textDisplay.Text != "+" 
+                && this.textDisplay.Text != "-" && this.textDisplay.Text != "^"
+                && this.textDisplay.Text != "sqrt")
+            {
+                foo = Convert.ToDouble(this.textDisplay.Text);
+                Console.WriteLine("answer: " + Convert.ToString(foo));
+            }
+        }
+        
+
+
+/*=================================================================================================
+ *                                    BUTTON ACITONS START
+ ================================================================================================*/
         public FormMain()
         {
             InitializeComponent();
@@ -21,9 +59,161 @@ namespace VernaCalculator
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+    //When button 0 is clicked 
+        private void button0_Click(object sender, EventArgs e)
         {
-
+            this.addButtonValue(this.button0.Text);
         }
+    //When button 1 is clicked
+        private void button1_Click(object sender, EventArgs e)
+        {
+               this.addButtonValue(this.button1.Text);
+        }
+    //When button 2 is clicked
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.addButtonValue(this.button2.Text);
+        }
+    //When button 3 is clicked
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.addButtonValue(this.button3.Text);
+        }
+    //When button 4 is clicked
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.addButtonValue(this.button4.Text);
+        }
+    //When button 5 is clicked
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.addButtonValue(this.button5.Text);
+        }
+    //When button 6 is clicked
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.addButtonValue(this.button6.Text);
+        }
+    //When button 7 is clicked
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.addButtonValue(this.button7.Text);
+        }
+    //When button 8 is clicked
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.addButtonValue(this.button8.Text);
+        }
+    //When button 9 is clicked
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.addButtonValue(this.button9.Text);
+        }
+    //When button + is clicked
+        private void buttonPlus_Click(object sender, EventArgs e)
+        {
+            this.operation = '+';
+
+            this.S2D(this.answer);
+
+            this.textDisplay.Text = "+";
+            
+        }
+    //When button - is clicked
+        private void buttonMinus_Click(object sender, EventArgs e)
+        {
+            this.operation = '-';
+
+            this.S2D(this.answer);
+
+            this.textDisplay.Text = "-";
+        }
+    //When button * is clicked
+        private void buttonMultiply_Click(object sender, EventArgs e)
+        {
+            this.operation = '*';
+
+            this.S2D(this.answer);
+
+            this.textDisplay.Text = "*";
+        }
+    //When button / is clicked
+        private void buttonDivide_Click(object sender, EventArgs e)
+        {
+            this.operation = '/';
+
+            this.S2D(this.answer);
+
+            this.textDisplay.Text = "/";
+        }
+    //When button ^ is clicked
+        private void buttonPowerOf_Click(object sender, EventArgs e)
+        {
+            this.operation = '^';
+
+            this.S2D(this.answer);
+
+            this.textDisplay.Text = "^";
+        }
+    //When button sqrt is clicked
+        private void buttonSquareRoot_Click(object sender, EventArgs e)
+        {
+            this.operation = 's';
+
+            this.S2D(this.answer);
+
+            this.textDisplay.Text = "sqrt";
+        }
+    //When button sqrt is clicked;
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            this.operation = ' ';
+            this.answer = 0.00;
+
+            this.textDisplay.Text = "0";
+    }
+
+    //When the user is ready to recieve their current answer
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            if (this.textDisplay.Text != "*" && this.textDisplay.Text != "/" && this.textDisplay.Text != "+"
+                && this.textDisplay.Text != "-" && this.textDisplay.Text != "^"
+                && this.textDisplay.Text != "sqrt")
+            {
+                this.S2D(this.gen);
+
+                Console.WriteLine("answer: " + Convert.ToString(this.answer));
+                Console.WriteLine("gen: " + Convert.ToString(this.gen));
+
+                switch (operation)
+                {
+                    case '+':
+                        answer += gen;
+                        break;
+                    case '-':
+                        answer -= gen;
+                        break;
+                    case '*':
+                        answer *= gen;
+                        break;
+                    case '/':
+                        answer /= gen;
+                        break;
+                    case '^':
+                        answer = Math.Pow(answer, gen);
+                        break;
+                    case 's':
+                        answer = Math.Pow(answer, (1/gen));
+                        break;
+                }
+                this.textDisplay.Text = Convert.ToString(this.answer);
+
+                
+            }
+        }
+
+        /*=================================================================================================
+        *                                    BUTTON ACITONS END
+        =================================================================================================*/
     }
 }
