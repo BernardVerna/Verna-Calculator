@@ -262,6 +262,11 @@ namespace VernaCalculator
             }
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
         /*=================================================================================================
         *                                    BUTTON ACITONS END
         =================================================================================================*/
