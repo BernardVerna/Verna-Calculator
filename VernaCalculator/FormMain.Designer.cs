@@ -346,6 +346,8 @@
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.KeyPreview = true;
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(pressKey);
 
         }
 

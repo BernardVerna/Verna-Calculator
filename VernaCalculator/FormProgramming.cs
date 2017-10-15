@@ -666,6 +666,76 @@ namespace VernaCalculator
         /*=================================================================================================
         *                                    BUTTON ACITONS END
         =================================================================================================*/
-        
+
+
+        /*=================================================================================================
+        *                                    KEY ACITONS START
+        =================================================================================================*/
+        private void pressKey(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == '0' && this.button0.Enabled == true) { this.addButtonValue("0"); }
+            if (e.KeyChar == '1' && this.button1.Enabled == true) { this.addButtonValue("1"); }
+            if (e.KeyChar == '2' && this.button2.Enabled == true) { this.addButtonValue("2"); }
+            if (e.KeyChar == '3' && this.button3.Enabled == true) { this.addButtonValue("3"); }
+            if (e.KeyChar == '4' && this.button4.Enabled == true) { this.addButtonValue("4"); }
+            if (e.KeyChar == '5' && this.button5.Enabled == true) { this.addButtonValue("5"); }
+            if (e.KeyChar == '6' && this.button6.Enabled == true) { this.addButtonValue("6"); }
+            if (e.KeyChar == '7' && this.button7.Enabled == true) { this.addButtonValue("7"); }
+            if (e.KeyChar == '8' && this.button8.Enabled == true) { this.addButtonValue("8"); }
+            if (e.KeyChar == '9' && this.button9.Enabled == true) { this.addButtonValue("9"); }
+
+            if (e.KeyChar == 'a' && this.buttonA.Enabled == true) { this.addButtonValue("a"); }
+            if (e.KeyChar == 'b' && this.buttonB.Enabled == true) { this.addButtonValue("b"); }
+            if (e.KeyChar == 'c' && this.buttonC.Enabled == true) { this.addButtonValue("c"); }
+            if (e.KeyChar == 'd' && this.buttonD.Enabled == true) { this.addButtonValue("d"); }
+            if (e.KeyChar == 'e' && this.buttonE.Enabled == true) { this.addButtonValue("e"); }
+            if (e.KeyChar == 'f' && this.buttonF.Enabled == true) { this.addButtonValue("f"); }
+
+            if (e.KeyChar == '+' == true)
+            {
+                this.operation = '+';
+
+                this.setAnswer();
+
+                this.textDisplay.Text = "+";
+
+                this.counter = 0;
+            }
+            if (e.KeyChar == '-' == true)
+            {
+                this.operation = '-';
+
+                this.setAnswer();
+
+                this.textDisplay.Text = "-";
+
+                this.counter = 0;
+            }
+            if (e.KeyChar == '*' == true)
+            {
+                this.operation = '*';
+
+                this.setAnswer();
+
+                this.textDisplay.Text = "*";
+
+                this.counter = 0;
+            }
+            if (e.KeyChar == '/' == true)
+            {
+                this.operation = '/';
+
+                this.setAnswer();
+                
+                this.textDisplay.Text = "/";
+
+                this.counter = 0;
+            }
+        }
+        /*=================================================================================================
+        *                                    KEY ACITONS END
+        =================================================================================================*/
+
     }
 }

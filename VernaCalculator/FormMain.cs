@@ -279,7 +279,7 @@ namespace VernaCalculator
         private void menuProgrammer_Click(object sender, EventArgs e)
         {
             FormProgramming f = new FormProgramming();
-            
+            f.StartPosition.Equals(this.StartPosition);
 
             this.Hide();
             
@@ -290,6 +290,68 @@ namespace VernaCalculator
 
         /*=================================================================================================
         *                                    MENU ACITONS END
+        =================================================================================================*/
+
+        /*=================================================================================================
+        *                                    KEY ACITONS START
+        =================================================================================================*/
+        private void pressKey(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == '0' && this.button0.Enabled == true) { this.addButtonValue("0"); }
+            if (e.KeyChar == '1' && this.button1.Enabled == true) { this.addButtonValue("1"); }
+            if (e.KeyChar == '2' && this.button2.Enabled == true) { this.addButtonValue("2"); }
+            if (e.KeyChar == '3' && this.button3.Enabled == true) { this.addButtonValue("3"); }
+            if (e.KeyChar == '4' && this.button4.Enabled == true) { this.addButtonValue("4"); }
+            if (e.KeyChar == '5' && this.button5.Enabled == true) { this.addButtonValue("5"); }
+            if (e.KeyChar == '6' && this.button6.Enabled == true) { this.addButtonValue("6"); }
+            if (e.KeyChar == '7' && this.button7.Enabled == true) { this.addButtonValue("7"); }
+            if (e.KeyChar == '8' && this.button8.Enabled == true) { this.addButtonValue("8"); }
+            if (e.KeyChar == '9' && this.button9.Enabled == true) { this.addButtonValue("9"); }
+
+            if (e.KeyChar == '+' == true)
+            {
+                this.operation = '+';
+
+                this.setAnswer();
+
+                this.textDisplay.Text = "+";
+
+                this.counter = 0;
+            }
+            if (e.KeyChar == '-' == true)
+            {
+                this.operation = '-';
+
+                this.setAnswer();
+
+                this.textDisplay.Text = "-";
+
+                this.counter = 0;
+            }
+            if (e.KeyChar == '*' == true)
+            {
+                this.operation = '*';
+
+                this.setAnswer();
+
+                this.textDisplay.Text = "*";
+
+                this.counter = 0;
+            }
+            if (e.KeyChar == '/' == true)
+            {
+                this.operation = '/';
+
+                this.setAnswer();
+
+                this.textDisplay.Text = "/";
+
+                this.counter = 0;
+            }
+        }
+        /*=================================================================================================
+        *                                    KEY ACITONS END
         =================================================================================================*/
     }
 }

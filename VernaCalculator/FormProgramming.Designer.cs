@@ -317,7 +317,7 @@
             this.buttonF.TabIndex = 26;
             this.buttonF.Text = "F";
             this.buttonF.UseVisualStyleBackColor = true;
-            this.buttonF.Click += new System.EventHandler(buttonF_Click);
+            this.buttonF.Click += new System.EventHandler(this.buttonF_Click);
             // 
             // buttonE
             // 
@@ -328,7 +328,7 @@
             this.buttonE.TabIndex = 25;
             this.buttonE.Text = "E";
             this.buttonE.UseVisualStyleBackColor = true;
-            this.buttonE.Click += new System.EventHandler(buttonE_Click);
+            this.buttonE.Click += new System.EventHandler(this.buttonE_Click);
             // 
             // buttonD
             // 
@@ -339,7 +339,7 @@
             this.buttonD.TabIndex = 24;
             this.buttonD.Text = "D";
             this.buttonD.UseVisualStyleBackColor = true;
-            this.buttonD.Click += new System.EventHandler(buttonD_Click);
+            this.buttonD.Click += new System.EventHandler(this.buttonD_Click);
             // 
             // buttonC
             // 
@@ -350,7 +350,7 @@
             this.buttonC.TabIndex = 23;
             this.buttonC.Text = "C";
             this.buttonC.UseVisualStyleBackColor = true;
-            this.buttonC.Click += new System.EventHandler(buttonC_Click);
+            this.buttonC.Click += new System.EventHandler(this.buttonC_Click);
             // 
             // buttonB
             // 
@@ -361,7 +361,7 @@
             this.buttonB.TabIndex = 22;
             this.buttonB.Text = "B";
             this.buttonB.UseVisualStyleBackColor = true;
-            this.buttonB.Click += new System.EventHandler(buttonB_Click);
+            this.buttonB.Click += new System.EventHandler(this.buttonB_Click);
             // 
             // buttonA
             // 
@@ -372,7 +372,7 @@
             this.buttonA.TabIndex = 21;
             this.buttonA.Text = "A";
             this.buttonA.UseVisualStyleBackColor = true;
-            this.buttonA.Click += new System.EventHandler(buttonA_Click);
+            this.buttonA.Click += new System.EventHandler(this.buttonA_Click);
             // 
             // buttonHex
             // 
@@ -476,6 +476,7 @@
             this.Controls.Add(this.textDisplay);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip;
             this.MaximumSize = new System.Drawing.Size(370, 360);
             this.MinimumSize = new System.Drawing.Size(370, 360);
@@ -487,6 +488,7 @@
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(pressKey);
 
         }
 
