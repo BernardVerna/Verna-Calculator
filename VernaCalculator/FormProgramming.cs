@@ -461,7 +461,7 @@ namespace VernaCalculator
             FormMain f = new FormMain();
 
             f.Location = this.Location;
-
+            
             this.Hide();
 
             f.ShowDialog();
@@ -666,5 +666,6 @@ namespace VernaCalculator
         /*=================================================================================================
         *                                    BUTTON ACITONS END
         =================================================================================================*/
+        
     }
 }
