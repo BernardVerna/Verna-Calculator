@@ -181,7 +181,7 @@ namespace VernaCalculator
 
         private void FormProgramming_Load(object sender, EventArgs e)
         {
-
+            SetFeatureToAllControls(this.Controls);
         }
 
 
@@ -667,32 +667,43 @@ namespace VernaCalculator
         *                                    BUTTON ACITONS END
         =================================================================================================*/
 
-
         /*=================================================================================================
         *                                    KEY ACITONS START
         =================================================================================================*/
-        private void pressKey(object sender, KeyPressEventArgs e)
+
+        private void SetFeatureToAllControls(Control.ControlCollection cc)
         {
+            if (cc != null)
+            {
+                foreach (Control control in cc)
+                {
+                    control.PreviewKeyDown += new PreviewKeyDownEventHandler(control_PreviewKeyDown);
+                    SetFeatureToAllControls(control.Controls);
+                }
+            }
+        }
 
-            if (e.KeyChar == '0' && this.button0.Enabled == true) { this.addButtonValue("0"); }
-            if (e.KeyChar == '1' && this.button1.Enabled == true) { this.addButtonValue("1"); }
-            if (e.KeyChar == '2' && this.button2.Enabled == true) { this.addButtonValue("2"); }
-            if (e.KeyChar == '3' && this.button3.Enabled == true) { this.addButtonValue("3"); }
-            if (e.KeyChar == '4' && this.button4.Enabled == true) { this.addButtonValue("4"); }
-            if (e.KeyChar == '5' && this.button5.Enabled == true) { this.addButtonValue("5"); }
-            if (e.KeyChar == '6' && this.button6.Enabled == true) { this.addButtonValue("6"); }
-            if (e.KeyChar == '7' && this.button7.Enabled == true) { this.addButtonValue("7"); }
-            if (e.KeyChar == '8' && this.button8.Enabled == true) { this.addButtonValue("8"); }
-            if (e.KeyChar == '9' && this.button9.Enabled == true) { this.addButtonValue("9"); }
+        void control_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.NumPad0 && this.button0.Enabled == true) { this.addButtonValue("0"); }
+            if (e.KeyCode == Keys.NumPad1 && this.button1.Enabled == true) { this.addButtonValue("1"); }
+            if (e.KeyCode == Keys.NumPad2 && this.button2.Enabled == true) { this.addButtonValue("2"); }
+            if (e.KeyCode == Keys.NumPad3 && this.button3.Enabled == true) { this.addButtonValue("3"); }
+            if (e.KeyCode == Keys.NumPad4 && this.button4.Enabled == true) { this.addButtonValue("4"); }
+            if (e.KeyCode == Keys.NumPad5 && this.button5.Enabled == true) { this.addButtonValue("5"); }
+            if (e.KeyCode == Keys.NumPad6 && this.button6.Enabled == true) { this.addButtonValue("6"); }
+            if (e.KeyCode == Keys.NumPad7 && this.button7.Enabled == true) { this.addButtonValue("7"); }
+            if (e.KeyCode == Keys.NumPad8 && this.button8.Enabled == true) { this.addButtonValue("8"); }
+            if (e.KeyCode == Keys.NumPad9 && this.button9.Enabled == true) { this.addButtonValue("9"); }
 
-            if (e.KeyChar == 'a' && this.buttonA.Enabled == true) { this.addButtonValue("a"); }
-            if (e.KeyChar == 'b' && this.buttonB.Enabled == true) { this.addButtonValue("b"); }
-            if (e.KeyChar == 'c' && this.buttonC.Enabled == true) { this.addButtonValue("c"); }
-            if (e.KeyChar == 'd' && this.buttonD.Enabled == true) { this.addButtonValue("d"); }
-            if (e.KeyChar == 'e' && this.buttonE.Enabled == true) { this.addButtonValue("e"); }
-            if (e.KeyChar == 'f' && this.buttonF.Enabled == true) { this.addButtonValue("f"); }
+            if (e.KeyCode == Keys.A && this.button0.Enabled == true) { this.addButtonValue("a"); }
+            if (e.KeyCode == Keys.B && this.button1.Enabled == true) { this.addButtonValue("b"); }
+            if (e.KeyCode == Keys.C && this.button2.Enabled == true) { this.addButtonValue("c"); }
+            if (e.KeyCode == Keys.D && this.button3.Enabled == true) { this.addButtonValue("d"); }
+            if (e.KeyCode == Keys.E && this.button4.Enabled == true) { this.addButtonValue("e"); }
+            if (e.KeyCode == Keys.F && this.button5.Enabled == true) { this.addButtonValue("f"); }
 
-            if (e.KeyChar == '+' == true)
+            if (e.KeyCode == Keys.Add)
             {
                 this.operation = '+';
 
@@ -702,7 +713,7 @@ namespace VernaCalculator
 
                 this.counter = 0;
             }
-            if (e.KeyChar == '-' == true)
+            if (e.KeyCode == Keys.Subtract)
             {
                 this.operation = '-';
 
@@ -712,7 +723,7 @@ namespace VernaCalculator
 
                 this.counter = 0;
             }
-            if (e.KeyChar == '*' == true)
+            if (e.KeyCode == Keys.Multiply)
             {
                 this.operation = '*';
 
@@ -722,20 +733,25 @@ namespace VernaCalculator
 
                 this.counter = 0;
             }
-            if (e.KeyChar == '/' == true)
+            if (e.KeyCode == Keys.Divide)
             {
                 this.operation = '/';
 
                 this.setAnswer();
-                
+
                 this.textDisplay.Text = "/";
 
                 this.counter = 0;
+            }
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+            {
+                e.IsInputKey = true;
             }
         }
         /*=================================================================================================
         *                                    KEY ACITONS END
         =================================================================================================*/
+
 
     }
 }

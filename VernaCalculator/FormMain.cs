@@ -77,6 +77,7 @@ namespace VernaCalculator
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            SetFeatureToAllControls(this.Controls);
         }
 
     //When button 0 is clicked 
@@ -295,21 +296,33 @@ namespace VernaCalculator
         /*=================================================================================================
         *                                    KEY ACITONS START
         =================================================================================================*/
-        private void pressKey(object sender, KeyPressEventArgs e)
+
+        private void SetFeatureToAllControls(Control.ControlCollection cc)
         {
+            if (cc != null)
+            {
+                foreach (Control control in cc)
+                {
+                    control.PreviewKeyDown += new PreviewKeyDownEventHandler(control_PreviewKeyDown);
+                    SetFeatureToAllControls(control.Controls);
+                }
+            }
+        }
 
-            if (e.KeyChar == '0' && this.button0.Enabled == true) { this.addButtonValue("0"); }
-            if (e.KeyChar == '1' && this.button1.Enabled == true) { this.addButtonValue("1"); }
-            if (e.KeyChar == '2' && this.button2.Enabled == true) { this.addButtonValue("2"); }
-            if (e.KeyChar == '3' && this.button3.Enabled == true) { this.addButtonValue("3"); }
-            if (e.KeyChar == '4' && this.button4.Enabled == true) { this.addButtonValue("4"); }
-            if (e.KeyChar == '5' && this.button5.Enabled == true) { this.addButtonValue("5"); }
-            if (e.KeyChar == '6' && this.button6.Enabled == true) { this.addButtonValue("6"); }
-            if (e.KeyChar == '7' && this.button7.Enabled == true) { this.addButtonValue("7"); }
-            if (e.KeyChar == '8' && this.button8.Enabled == true) { this.addButtonValue("8"); }
-            if (e.KeyChar == '9' && this.button9.Enabled == true) { this.addButtonValue("9"); }
+        void control_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.NumPad0 && this.button0.Enabled == true) { this.addButtonValue("0"); }
+            if (e.KeyCode == Keys.NumPad1 && this.button1.Enabled == true) { this.addButtonValue("1"); }
+            if (e.KeyCode == Keys.NumPad2 && this.button2.Enabled == true) { this.addButtonValue("2"); }
+            if (e.KeyCode == Keys.NumPad3 && this.button3.Enabled == true) { this.addButtonValue("3"); }
+            if (e.KeyCode == Keys.NumPad4 && this.button4.Enabled == true) { this.addButtonValue("4"); }
+            if (e.KeyCode == Keys.NumPad5 && this.button5.Enabled == true) { this.addButtonValue("5"); }
+            if (e.KeyCode == Keys.NumPad6 && this.button6.Enabled == true) { this.addButtonValue("6"); }
+            if (e.KeyCode == Keys.NumPad7 && this.button7.Enabled == true) { this.addButtonValue("7"); }
+            if (e.KeyCode == Keys.NumPad8 && this.button8.Enabled == true) { this.addButtonValue("8"); }
+            if (e.KeyCode == Keys.NumPad9 && this.button9.Enabled == true) { this.addButtonValue("9"); }
 
-            if (e.KeyChar == '+' == true)
+            if (e.KeyCode == Keys.Add )
             {
                 this.operation = '+';
 
@@ -319,7 +332,7 @@ namespace VernaCalculator
 
                 this.counter = 0;
             }
-            if (e.KeyChar == '-' == true)
+            if (e.KeyCode == Keys.Subtract )
             {
                 this.operation = '-';
 
@@ -329,7 +342,7 @@ namespace VernaCalculator
 
                 this.counter = 0;
             }
-            if (e.KeyChar == '*' == true)
+            if (e.KeyCode == Keys.Multiply )
             {
                 this.operation = '*';
 
@@ -339,7 +352,7 @@ namespace VernaCalculator
 
                 this.counter = 0;
             }
-            if (e.KeyChar == '/' == true)
+            if (e.KeyCode == Keys.Divide )
             {
                 this.operation = '/';
 
@@ -348,6 +361,10 @@ namespace VernaCalculator
                 this.textDisplay.Text = "/";
 
                 this.counter = 0;
+            }
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
+            {
+                e.IsInputKey = true;
             }
         }
         /*=================================================================================================

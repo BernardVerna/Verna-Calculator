@@ -62,7 +62,7 @@
             this.buttonSquareRoot.Location = new System.Drawing.Point(12, 87);
             this.buttonSquareRoot.Name = "buttonSquareRoot";
             this.buttonSquareRoot.Size = new System.Drawing.Size(50, 40);
-            this.buttonSquareRoot.TabIndex = 0;
+            this.buttonSquareRoot.TabIndex = 1;
             this.buttonSquareRoot.Text = "sqrt";
             this.buttonSquareRoot.UseVisualStyleBackColor = true;
             this.buttonSquareRoot.Click += new System.EventHandler(this.buttonSquareRoot_Click);
@@ -262,7 +262,7 @@
             this.buttonEnter.Location = new System.Drawing.Point(124, 271);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(106, 40);
-            this.buttonEnter.TabIndex = 18;
+            this.buttonEnter.TabIndex = 1;
             this.buttonEnter.Text = "Enter";
             this.buttonEnter.UseVisualStyleBackColor = true;
             this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
@@ -275,7 +275,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(244, 24);
-            this.menuStrip.TabIndex = 19;
+            this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "menuStrip1";
             // 
             // windowToolStripMenuItem
@@ -335,6 +335,7 @@
             this.Controls.Add(this.buttonSquareRoot);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip;
             this.MaximumSize = new System.Drawing.Size(260, 360);
             this.MinimumSize = new System.Drawing.Size(260, 360);
@@ -346,8 +347,6 @@
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.KeyPreview = true;
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(pressKey);
 
         }
 
