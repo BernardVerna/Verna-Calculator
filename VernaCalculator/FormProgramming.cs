@@ -363,7 +363,7 @@ namespace VernaCalculator
         {
             if (this.textDisplay.Text != "*" && this.textDisplay.Text != "/" && this.textDisplay.Text != "+"
                 && this.textDisplay.Text != "-" && this.textDisplay.Text != "^"
-                && this.textDisplay.Text != "sqrt")
+                && this.textDisplay.Text != "sqrt" && this.operation != ' ')
             {
                 if (counter == 0)
                 {
@@ -475,7 +475,8 @@ namespace VernaCalculator
         {
             this.baseConvert(this.answerBase, 'd');
 
-            answerBase = 'd';
+            this.answerBase = 'd';
+            this.operation = ' ';
 
             this.counter = 0;
 
@@ -523,7 +524,8 @@ namespace VernaCalculator
         {
             this.baseConvert(this.answerBase, 'b');
 
-            answerBase = 'b';
+            this.answerBase = 'b';
+            this.operation = ' ';
 
             this.counter = 0;
 
@@ -570,7 +572,8 @@ namespace VernaCalculator
         {
             this.baseConvert(this.answerBase, 'o');
 
-            answerBase = 'o';
+            this.answerBase = 'o';
+            this.operation = ' ';
 
             this.counter = 0;
             
@@ -618,7 +621,8 @@ namespace VernaCalculator
         {
             this.baseConvert(this.answerBase, 'h');
 
-            answerBase = 'h';
+            this.answerBase = 'h';
+            this.operation = ' ';
 
             this.counter = 0;
             
